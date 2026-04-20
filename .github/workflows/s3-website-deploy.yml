@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code from repo
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
       - name: Configure aws Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
