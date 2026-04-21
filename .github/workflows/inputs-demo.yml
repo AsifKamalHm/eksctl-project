@@ -27,4 +27,10 @@ jobs:
     steps:
       - name: Context Variables
         run: echo " i am logedin as ${{ github.actor }}"
+  print_myenv:
+    runs-on: ubuntu-latest
+    needs: context_variables
+    steps:
+      - name: print all the system env
+        run: printenv
     
