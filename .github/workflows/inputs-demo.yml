@@ -21,4 +21,9 @@ jobs:
     steps:
       - name: inputs demo
         run: echo "deploying the application ${{ inputs.artifact_tag }} to ${{ inputs.environment }}"
+  context_variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Context Variables
+        run: echo " i am logedin as ${{ github.actor }}"
     
