@@ -30,3 +30,12 @@ jobs:
       run: |
           SHORT_SHA=${GITHUB_SHA::7}
           yq -i '.spec.template.spec.containers[0].image = "asif21gm/pyapp:$SHORT_SHA"' ./k8s/pyapp-dep.yml
+    - name: commit changes to docker hub
+      run: |
+        git config user.name "github-action@[bot]"
+        git config user.email "github-action@noreply"
+        git add k8s/pyapp-dep.yml
+        git commit -m 'docker tag update by GHA'
+        git push origin main
+        
+        
